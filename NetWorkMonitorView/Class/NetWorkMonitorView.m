@@ -354,7 +354,7 @@ CGPoint originalLocation;   //全局变量 用于存储起始位置
 @implementation UIViewController (Swizzle)
 
 
-#if defined(DEBUG) && DEBUG
+//#if defined(DEBUG) && DEBUG
 + (void)load{
     //方法交换应该被保证，在程序中只会执行一次
     static dispatch_once_t onceToken;
@@ -363,7 +363,7 @@ CGPoint originalLocation;   //全局变量 用于存储起始位置
         NetSwizzlingMethods([self class], @selector(viewWillAppear:), @selector(netSwiz_viewWillAppear:));
     });
 }
-#endif
+//#endif
 
 
 /** 方法交换*/
